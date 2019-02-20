@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalogs-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalogs
+  template:
+    metadata:
+      labels:
+        app: catalogs
+    spec:
+      containers:
+      - image: rokzidarn/rso-catalogs:2.0
+        name: catalogs
+        env:
+        - name: KUMULUZEE_DISCOVERY_CLUSTER
+          value: gcloud
+        - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
+          value: http://etcd:2379
+        - name: KUMULUZEE_CONFIG_ETCD_HOSTS
+          value: http://etcd:2379
+        - name: KUMULUZEE_SERVER_BASEURL
+          value: http://<insert URL>
+        ports:
+        - containerPort: 8082
+          name: server
+          protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogs
+spec:
+  type: NodePort
+  ports:
+  - port: 8082
+    protocol: TCP
+    targetPort: 8082
+  selector:
+    app: catalogs

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/comment.iml" filepath="$PROJECT_DIR$/comment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/comment-api.iml" filepath="$PROJECT_DIR$/api/comment-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/models/comment-models.iml" filepath="$PROJECT_DIR$/models/comment-models.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/comment-services.iml" filepath="$PROJECT_DIR$/services/comment-services.iml" />
+    </modules>
+  </component>
+</project>

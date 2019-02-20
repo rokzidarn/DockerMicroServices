@@ -1,0 +1,37 @@
+query getAllImages {
+   allImages {
+    result {
+       id
+       caption
+       URL
+       posted
+       catalogId
+    }
+   }
+ }
+
+query getImageById {
+  getImage(id: 1) {
+    id
+    caption
+    URL
+    posted
+    catalogId
+  }
+}
+
+mutation addImage {
+  addImage(image: {caption: "This is GQL", url: "https://www.s3.amazon.com/330812", posted: "2017-04-11T23:12:38Z", catalogId: 1}) {
+    id
+    caption
+    URL
+    posted
+    catalogId
+  }
+}
+
+mutation deleteImage{
+  deleteImage(id: 1){
+    deleted
+  }
+}

@@ -1,0 +1,24 @@
+kumuluzee:
+  name: rso-catalogs
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8082
+    http:
+      port: 8082
+  datasources:
+  - jndi-name: jdbc/CatalogsDS
+    connection-url: jdbc:postgresql://sl-eu-gb-p01.dblayer.com:15799/compose
+    username: admin
+    password: YODKTDTRRFSENICI
+    max-pool-size: 20
+  config:
+    etcd:
+      hosts: http://localhost:2379
+  discovery:
+    etcd:
+      hosts: http://localhost:2379
+app-properties:
+  external-services:
+    enabled: true
